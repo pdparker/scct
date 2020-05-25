@@ -1,13 +1,15 @@
 Package: scct
-Title: What the Package Does (One Line, Title Case)
+Title: Converts between common job and social class codes
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Philip",
+           family = "Parker",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "philip.parker@acu.edu.au",
+           comment = c(ORCID = "0000-0002-4604-8566"))
+Description: The package houses a central conversion table and a group of helper
+functions to convert between common job codes (e.g., ISCO) and social class
+codes (e.g., ISEI).
 License: MIT + file LICENSE
 Suggests: 
     testthat

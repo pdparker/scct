@@ -11,7 +11,13 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/scct)](https://CRAN.R-project.org/package=scct)
 <!-- badges: end -->
 
-The goal of scct is to …
+Many panel datasets contain codes that use a numeric system to code
+jobs. For example the [International Standard Classification of
+Occupations](https://www.ilo.org/public/english/bureau/stat/isco/).
+Often these codes need to be translated into social class or
+socioeconomic codes. This package facilitates that. It is based on, but
+extends, the correspondence table of [Ganzeboom &
+Treiman](http://www.harryganzeboom.nl/ismf/scaleapp.htm').
 
 ## Installation
 
@@ -19,7 +25,7 @@ You can install the released version of scct from
 [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("scct")
+#install.packages("scct")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
@@ -29,26 +35,24 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("pdparker/scct")
 ```
 
-## Example
+# Details
 
-This is a basic example which shows you how to solve a common problem:
+For EGP it is important to note that no distinction is made between
+classes 3 and 4 with code 3 used as a catch all for “Routine non-manual”
+jobs. Likewise, ISCO-88 contains no codes for self-employed or
+unemployed individuals. The convert function provides an argument to
+provide user-defined values for self-employed and unemployed. This will
+return 6 (for self-employed) and 12 (for unemployed). When ISEI or SIOPS
+is requested, user defined values are ignored and NA is returned.
 
-``` r
-#library(scct)
-## basic example code
-```
+## Sources
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+  - ISCO-88 correspondence table from [Ganzeboom’s code SPSS
+    code](http://www.harryganzeboom.nl/isco88/index.htm)
 
-``` r
-#
-```
+  - ANZSCO based on [ABS correspondance
+    tables](http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1220.0First%20Edition,%20Revision%201?OpenDocument)
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+  - Correspondence table from ISCO-08 to ISCO-88 based on that found at
+    the [International Labor
+    Organization](https://www.ilo.org/public/english/bureau/stat/isco/isco08/)
