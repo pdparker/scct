@@ -2,11 +2,17 @@ Package: scct
 Title: Converts between common job and social class codes
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Philip",
+    c(person(given = "Philip",
            family = "Parker",
            role = c("aut", "cre"),
            email = "philip.parker@acu.edu.au",
-           comment = c(ORCID = "0000-0002-4604-8566"))
+           comment = c(ORCID = "0000-0002-4604-8566")),
+    person(given = "James",
+           family = "Conigrave",
+           role = c("aut"),
+           email = "james.conigrave@sydney.edu.au",
+           comment = c(ORCID = "0000-0002-8816-6229"))
+           )
 Description: 
   The package houses a central conversion table and a group of helper
   functions to convert between common job codes (e.g., ISCO) and social class
