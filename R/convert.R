@@ -1,15 +1,16 @@
 #' convert
 #'
-#' @param values
-#' @param from
-#' @param to
-#' @param selfEmployed
-#' @param unemployed
+#' @param values vector of values for conversion
+#' @param from origin code name
+#' @param to destination code name
+#' @param selfEmployed vector of origin codes for self-employed
+#' @param unemployed vector of origin codes for unemployed
 #'
-#' @return
+#' @return Data table of oring and destination codes
 #' @export
 #'
 #' @examples
+#' convert(values = c("9321","9322","9330","1210"), from="isco_88", to = "isei")
 
 convert <- function(values, from = "isco_88", to = "egp", selfEmployed = NULL, unemployed = NULL){
 
@@ -17,6 +18,9 @@ convert <- function(values, from = "isco_88", to = "egp", selfEmployed = NULL, u
 
   if(any(!values %in% valid_keys)){
     warning("One or more inputs is not a valid code")
+    miss = values[!values %in% valid_keys]
+    values = values[values %in% valid_keys]
+    cat("Not returning results for: ", paste(miss), "\n")
   }
 
   vars = c("from", "to")
@@ -42,4 +46,3 @@ convert <- function(values, from = "isco_88", to = "egp", selfEmployed = NULL, u
   return(result)
 }
 
-convert(values = c("9321","9322","9330","1210"), to="isco_08")

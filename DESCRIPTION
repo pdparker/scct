@@ -7,9 +7,10 @@ Authors@R:
            role = c("aut", "cre"),
            email = "philip.parker@acu.edu.au",
            comment = c(ORCID = "0000-0002-4604-8566"))
-Description: The package houses a central conversion table and a group of helper
-functions to convert between common job codes (e.g., ISCO) and social class
-codes (e.g., ISEI).
+Description: 
+  The package houses a central conversion table and a group of helper
+  functions to convert between common job codes (e.g., ISCO) and social class
+  codes (e.g., ISEI).
 License: MIT + file LICENSE
 Suggests: 
     testthat
