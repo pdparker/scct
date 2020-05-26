@@ -1,3 +1,8 @@
+#' conversion_table
+#'
+#' @name conversion_table
+#' @docType data
+
 #' convert
 #'
 #' @param values vector of values for conversion
@@ -7,6 +12,7 @@
 #' @param unemployed vector of origin codes for unemployed
 #'
 #' @return Data table of oring and destination codes
+#' @import data.table
 #' @export
 #'
 #' @examples
@@ -36,13 +42,14 @@ convert <- function(values, from = "isco_88", to = "egp", selfEmployed = NULL, u
   result = unique(result, by = "from")
 
   if(!is.null(selfEmployed) & to == "egp"){
-    result[ISCO %in% selfEmployed,2] <- 6
+    result[values %in% selfEmployed,2] <- 6
   }
 
   if(!is.null(unemployed) & to == "egp"){
-    result[ISCO %in% unemployed, 2] <- 12
+    result[values %in% unemployed, 2] <- 12
   }
 
   return(result)
 }
 
+utils::globalVariables(c("conversion_table"))

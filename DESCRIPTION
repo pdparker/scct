@@ -1,6 +1,6 @@
 Package: scct
 Title: Converts between common job and social class codes
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     c(person(given = "Philip",
            family = "Parker",
@@ -24,3 +24,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Imports: 
+    data.table
+Depends: 
+    R (>= 3.5)
